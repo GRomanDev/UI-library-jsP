@@ -1,6 +1,6 @@
 import './lib/lib';
 
 $('button').on('click', function() {
-    $(this).toggleClass('active');
+    $(this).addAttr('name', 'btn-first');
 });
 
