@@ -218,13 +218,37 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addAttr = function (name
   return this;
 };
 
-_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeAttr = function (name, value) {
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.removeAttr = function (name) {
   for (let i = 0; i < this.length; i++) {
     if (!this[i].removeAttribute) {
       continue;
     }
 
-    this[i].removeAttribute(name, value);
+    this[i].removeAttribute(name);
+  }
+
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.toggleAttr = function (name, value) {
+  for (let i = 0; i < this.length; i++) {
+    if (this[i].hasAttribute(name)) {
+      this[i].removeAttribute(name);
+    } else {
+      this[i].setAttribute(name, value);
+    }
+  }
+
+  return this;
+};
+
+_core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.getAttr = function (attributeName) {
+  for (let i = 0; i < this.length; i++) {
+    if (!this[i].getAttribute(attributeName)) {
+      continue;
+    }
+
+    return this[i].getAttribute(attributeName);
   }
 
   return this;
@@ -348,7 +372,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
 $('button').on('click', function () {
-  $(this).addAttr('name', 'btn-first');
+  $(this).toggleAttr('name', 'btn-first');
 });
 
 /***/ })
