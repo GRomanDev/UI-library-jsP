@@ -1,4 +1,4 @@
 import './lib/lib';
 
-$('.active').toggle();
+$('.active').addClass('hi').removeClass('active').toggleClass('fdfdf');
 
