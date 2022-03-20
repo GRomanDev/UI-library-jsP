@@ -1,7 +1,8 @@
 import $ from './core';
 import './modules/display';
 import './modules/classes';
-import './modules/action';
+import './modules/actions';
 import './modules/attributes';
+import './modules/handlers';
 
 export default $;
