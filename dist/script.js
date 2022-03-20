@@ -230,12 +230,8 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
   let counter = 0;
 
   for (let i = 0; i < this.length; i++) {
-    if (this[i].closest(selector) === null) {
-      return this;
-    } else {
-      this[i] = this[i].closest(selector);
-      counter++;
-    }
+    this[i] = this[i].closest(selector);
+    counter++;
   }
 
   const objLength = Object.keys(this).length;
@@ -357,7 +353,7 @@ __webpack_require__.r(__webpack_exports__);
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.addClass = function () {
   for (let i = 0; i < this.length; i++) {
-    if (!this[i].classList) {
+    if (!this[i] || !this[i].classList) {
       continue;
     }
 
@@ -516,9 +512,9 @@ $('button').on('click', function () {
 $('div').click(function () {
   console.log($(this).index());
 }); // console.log($('div').eq(3).find('.more'));
-// console.log($('.some').closest('.findmre'));
 
-console.log($('.some').siblings()); // console.log($('button').html('Hello'));
+console.log($('.some').closest('.findme').addClass('visible')); // console.log($('.some').siblings());
+// console.log($('button').html('Hello'));
 
 /***/ })
 

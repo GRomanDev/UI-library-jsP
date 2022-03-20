@@ -80,12 +80,8 @@ $.prototype.closest = function(selector) {
     let counter = 0;
 
     for (let i = 0; i < this.length; i++) {
-        if (this[i].closest(selector) === null) {
-            return this;
-        } else {
-            this[i] = this[i].closest(selector);
+        this[i] = this[i].closest(selector);
         counter++;
-        }
     }
 
     const objLength = Object.keys(this).length;
