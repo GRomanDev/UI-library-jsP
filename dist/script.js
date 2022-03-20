@@ -230,8 +230,12 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
   let counter = 0;
 
   for (let i = 0; i < this.length; i++) {
-    this[i] = this[i].closest(selector);
-    counter++;
+    if (this[i].closest(selector) === null) {
+      return this;
+    } else {
+      this[i] = this[i].closest(selector);
+      counter++;
+    }
   }
 
   const objLength = Object.keys(this).length;
@@ -509,9 +513,9 @@ $('button').on('click', function () {
 
 $('div').click(function () {
   console.log($(this).index());
-});
-console.log($('div').eq(3).find('.more')); // console.log($('.some').closest('.findme'));
-// console.log($('.some').siblings());
+}); // console.log($('div').eq(3).find('.more'));
+
+console.log($('.some').closest('.findmre')); // console.log($('.somed').eq(0).siblings());
 // console.log($('button').html('Hello'));
 
 /***/ })

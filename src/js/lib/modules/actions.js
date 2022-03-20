@@ -72,7 +72,7 @@ $.prototype.find = function(selector) {
  
     Object.assign(this, newObj);
     this.length = newObj.length;
-    
+
     return this;
 };
 
@@ -80,8 +80,12 @@ $.prototype.closest = function(selector) {
     let counter = 0;
 
     for (let i = 0; i < this.length; i++) {
-        this[i] = this[i].closest(selector);
+        if (this[i].closest(selector) === null) {
+            return this;
+        } else {
+            this[i] = this[i].closest(selector);
         counter++;
+        }
     }
 
     const objLength = Object.keys(this).length;
