@@ -11,8 +11,8 @@ $('div').click(function() {
     console.log($(this).index());
 });
 
-// console.log($('div').eq(3).find('.some'));
+console.log($('div').eq(3).find('.more'));
 // console.log($('.some').closest('.findme'));
 // console.log($('.some').siblings());
 
-console.log($('button').html('Hello'));
+// console.log($('button').html('Hello'));
