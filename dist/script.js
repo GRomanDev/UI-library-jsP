@@ -248,32 +248,34 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
 };
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.siblings = function () {
-  let numberOfItems = 0;
-  let counter = 0;
-  const copyObj = Object.assign({}, this);
+  // let numberOfItems = 0;
+  // let counter = 0;
+  // const copyObj = Object.assign({}, this);
+  // for (let i = 0; i < copyObj.length; i++) {
+  //     const arr = copyObj[i].parentNode.children;
+  //     for (let j = 0; j < arr.length; j++) {
+  //         if (copyObj[i] === arr[j]) {
+  //             continue;
+  //         }
+  //         this[counter] = arr[j];
+  //         counter++;
+  //     }
+  //     numberOfItems += arr.length - 1;
+  // }
+  // this.length = numberOfItems;
+  // const objLength = Object.keys(this).length;
+  // for (; numberOfItems < objLength; numberOfItems++) {
+  //     delete this[numberOfItems];
+  // }
+  // return this;
+  const newObj = [...this[0].parentNode.children].filter(item => item !== this[0]);
 
-  for (let i = 0; i < copyObj.length; i++) {
-    const arr = copyObj[i].parentNode.children;
-
-    for (let j = 0; j < arr.length; j++) {
-      if (copyObj[i] === arr[j]) {
-        continue;
-      }
-
-      this[counter] = arr[j];
-      counter++;
-    }
-
-    numberOfItems += arr.length - 1;
+  for (let i = 0; i < this.length; i++) {
+    delete this[i];
   }
 
-  this.length = numberOfItems;
-  const objLength = Object.keys(this).length;
-
-  for (; numberOfItems < objLength; numberOfItems++) {
-    delete this[numberOfItems];
-  }
-
+  Object.assign(this, newObj);
+  this.length = newObj.length;
   return this;
 };
 
@@ -514,9 +516,9 @@ $('button').on('click', function () {
 $('div').click(function () {
   console.log($(this).index());
 }); // console.log($('div').eq(3).find('.more'));
+// console.log($('.some').closest('.findmre'));
 
-console.log($('.some').closest('.findmre')); // console.log($('.somed').eq(0).siblings());
-// console.log($('button').html('Hello'));
+console.log($('.some').siblings()); // console.log($('button').html('Hello'));
 
 /***/ })
 

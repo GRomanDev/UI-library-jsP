@@ -12,7 +12,7 @@ $('div').click(function() {
 });
 
 // console.log($('div').eq(3).find('.more'));
-console.log($('.some').closest('.findmre'));
-// console.log($('.somed').eq(0).siblings());
+// console.log($('.some').closest('.findmre'));
+console.log($('.some').siblings());
 
 // console.log($('button').html('Hello'));
