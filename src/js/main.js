@@ -1,7 +1,7 @@
 import './lib/lib';
 
 $('button').on('click', function() {
-    $(this).toggleAttr('name', 'btn-first');
+    $('.findme').fadeOut(1000);
 });
 
 // let div3 = $('#tree').addAttr('name', 'div32').getAttr('name');
@@ -12,7 +12,7 @@ $('div').click(function() {
 });
 
 // console.log($('div').eq(3).find('.more'));
-console.log($('.some').closest('.findme').addClass('visible'));
+// console.log($('.some').closest('.findme').addClass('visible'));
 // console.log($('.some').siblings());
 
-// console.log($('button').html('Hello'));
+// $('button').fadeIn(2000);
