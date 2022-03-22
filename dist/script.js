@@ -576,17 +576,15 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
 
-$('button').on('click', function () {
-  $('.findme').fadeOut(1000);
-}); // let div3 = $('#tree').addAttr('name', 'div32').getAttr('name');
-// console.log(div3);
-
-$('div').click(function () {
-  console.log($(this).index());
-}); // console.log($('div').eq(3).find('.more'));
-// console.log($('.some').closest('.findme').addClass('visible'));
-// console.log($('.some').siblings());
-// $('button').fadeIn(2000);
+$('#first').on('click', () => {
+  $('div').eq(1).fadeOut(900);
+});
+$('[data-count=second]').on('click', () => {
+  $('div').eq(2).fadeOut(900);
+});
+$('.btn').eq(2).on('click', () => {
+  $('.w-500').fadeOut(900);
+});
 
 /***/ })
 

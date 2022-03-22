@@ -1,18 +1,13 @@
 import './lib/lib';
 
-$('button').on('click', function() {
-    $('.findme').fadeOut(1000);
+$('#first').on('click', () => {
+    $('div').eq(1).fadeOut(900);
 });
 
-// let div3 = $('#tree').addAttr('name', 'div32').getAttr('name');
-// console.log(div3);
-
-$('div').click(function() {
-    console.log($(this).index());
+$('[data-count=second]').on('click', () => {
+    $('div').eq(2).fadeOut(900);
 });
 
-// console.log($('div').eq(3).find('.more'));
-// console.log($('.some').closest('.findme').addClass('visible'));
-// console.log($('.some').siblings());
-
-// $('button').fadeIn(2000);
+$('.btn').eq(2).on('click', () => {
+    $('.w-500').fadeOut(900);
+});
